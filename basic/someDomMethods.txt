@@ -1,0 +1,6 @@
+replaceWith:- Can replace the dom element with other
+remove will remove the dom element
+Sntax to get nth child
+document.querySelector("li:first-child")
+document.querySelector("li:nth-child(2)")
+.....
