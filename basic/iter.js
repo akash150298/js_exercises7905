@@ -69,3 +69,36 @@ const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const newNums = myNumers.map((item) => item*9).map((item) => item +10).filter((item) => item > 45)
 console.log(newNums);
 
+const numbers = [1, 2, 3];
+
+let totalSum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+
+console.log(totalSum);
+
+const shoppingCart = [
+    {
+        itemName: "JavaScript Course",
+        price: 2999
+    },
+    {
+        itemName: "Python Course",
+        price: 999
+    },
+    {
+        itemName: "Mobile Development Course",
+        price: 5999
+    },
+    {
+        itemName: "Data Science Course",
+        price: 12999
+    },
+];
+
+const totalPrice = shoppingCart.reduce((accumulator, item) => {
+    return accumulator + item.price;
+}, 0);
+
+console.log(totalPrice);
+
