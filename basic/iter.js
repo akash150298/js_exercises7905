@@ -62,3 +62,10 @@ userLibrary = library.filter((book) => {
 });
 console.log(userLibrary);
 
+const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const newNums = myNumers.map( (num) => { return num + 10})
+
+const newNums = myNumers.map((item) => item*9).map((item) => item +10).filter((item) => item > 45)
+console.log(newNums);
+
