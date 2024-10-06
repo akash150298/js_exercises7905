@@ -14,7 +14,7 @@ buttons.forEach(button => {
   });
 });
 ```
-# Solution code for calculating bgw
+# Solution code for updating clock time in html dom
 ```javascript
 const form = document.querySelector('form');
 form.addEventListener('submit', function(e) {
