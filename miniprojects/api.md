@@ -36,4 +36,15 @@ form.addEventListener('submit', function(e) {
     result.innerHTML = `<span>Your BMI is ${bmi}</span>`;
   
 ```
+# Solution code for calculating bgw
+```javascript
+const clock = document.getElementById('clock');
+// const clock = document.querySelector('#clock')
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+```
 
