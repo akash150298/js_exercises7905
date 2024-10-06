@@ -14,4 +14,26 @@ buttons.forEach(button => {
   });
 });
 ```
+# Solution code for calculating bgw
+```javascript
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const heightInput = document.getElementById('height');
+  const weightInput = document.getElementById('weight');
+  const result = document.getElementById('results');
+  
+  const height = parseInt(heightInput.value);
+  const weight = parseInt(weightInput.value);
+
+  if (isNaN(height) || height <= 0) {
+    result.innerHTML = `Please provide a valid height.`;
+  } else if (isNaN(weight) || weight <= 0) {
+    result.innerHTML = `Please provide a valid weight.`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    result.innerHTML = `<span>Your BMI is ${bmi}</span>`;
+  
+```
 
