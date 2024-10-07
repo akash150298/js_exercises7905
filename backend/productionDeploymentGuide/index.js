@@ -3,8 +3,6 @@ const express = require('express');
 const app = express();
 const data = {
     "login": "akash150298",
-    "id": 109782459,
-    "node_id": "U_kgDOBosluw",
     "avatar_url": "https://avatars.githubusercontent.com/u/109782459?v=4",
     "gravatar_id": "",
   }
