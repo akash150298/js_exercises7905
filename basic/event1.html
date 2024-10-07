@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Images</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: aliceblue;
+        }
+        #images img {
+            width: 200px;
+        }
+        #images a {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img id="beach" src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="beach"></li>
+            <li><img id="mountains" src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="mountains"></li>
+            <li><img id="forest" src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="forest"></li>
+            <li><img id="city" src="https://images.pexels.com/photos/358696/pexels-photo-358696.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="city"></li>
+            <li><img id="desert" src="https://images.pexels.com/photos/3018365/pexels-photo-3018365.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="desert"></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelector("#city").addEventListener('click', function(event) {
+            console.log(event.target.id);
+            event.target.parentNode.remove();
+        });
+    </script>
+</body>
+</html>
 
