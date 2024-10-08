@@ -29,3 +29,17 @@
     const app = new React()
 </script>
 </html>
+// more about this
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    getFullName: function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+const unboundGetFullName = person.getFullName;
+console.log(unboundGetFullName()); // Outputs: undefined undefined
+
+const boundGetFullName = person.getFullName.bind(person);
+console.log(boundGetFullName()); // Outputs: John Doe
