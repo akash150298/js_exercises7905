@@ -45,3 +45,12 @@ promiseThree.then(function(user){
     return user.username
 }).then(function(username) {
 console.log(username)})
+// fetch will return me the the promise object
+fetch('https://api.github.com/users/akash150298')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
