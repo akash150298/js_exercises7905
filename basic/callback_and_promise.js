@@ -34,3 +34,14 @@ const promise1  = new Promise(function(resolve, reject) {
     })
   promise1.then(function(){
   console.log("promise is nothing but a cleaner way of callback")})
+const promiseThree = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({username: "akash", email: "akash@example.com"})
+    }, 1000)
+})
+
+promiseThree.then(function(user){
+    console.log(user);
+    return user.username
+}).then(function(username) {
+console.log(username)})
