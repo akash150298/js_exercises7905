@@ -54,3 +54,22 @@ fetch('https://api.github.com/users/akash150298')
     console.log(data);
 })
 .catch((error) => console.log(error))
+
+// async await
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data fetched successfully!');
+        }, 2000);
+    });
+}
+
+async function getData() {
+    console.log('Fetching data...');
+    try {
+        const data = await fetchData();
+        console.log(data); // Outputs: Data fetched successfully!
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
