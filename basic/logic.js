@@ -169,3 +169,12 @@ function swap(number) {
     return result
 }
 console.log(swap(1234))
+//  call back function
+function f1(str, f) {
+    console.log(str)
+    f(str)
+}
+function f() {
+    console.log("Yhi to call back function hota h")
+}
+f1("kyaa baat h", f)
