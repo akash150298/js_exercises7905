@@ -79,3 +79,14 @@ for (var year = 2014; year <= 2050; year++) {
     }
 }
 
+// exceptional handling
+const ab = function(number) {
+    if (!Number.isInteger(number)) {
+        throw new Error("The number is not an integer")
+    }
+    console.log("The number is valid")
+}
+ab('12')
+
+
+
