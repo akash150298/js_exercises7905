@@ -151,4 +151,21 @@ function divide_Numbers(x, y) {
     console.log('Cleanup code executed.');
   }
 }
-
+// swap adjacent pairs
+function swap(number) {
+    if (number.toString().length%2 != 0) {
+        return false
+    }
+    let x = 1
+    let n  = number
+    let result  = 0
+    while(n) {
+        let lastDigit = n%10
+        let secondLast = ((n - lastDigit)/10)%10
+        result += x*(10*lastDigit + secondLast)
+        n = Math.floor(n/100)
+        x = x*100
+    }
+    return result
+}
+console.log(swap(1234))
