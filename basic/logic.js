@@ -109,5 +109,20 @@ catch (error) {
   }
 }
 
+//  error handling for url
+function(url) {
+    try {
+        decoding = decodeURI(decoded)
+        console.log(deocoding)
+    }
+    catch(error) {
+        if (error instanceof URIError) {
+            console.log('URIError', error.message)
+        }
+        else {
+            console.log(error.message)
+        }
+    }
+}
 
 
