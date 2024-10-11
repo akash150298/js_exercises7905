@@ -1,1 +1,38 @@
+order collection
+{
+    "_id": 1,
+    "product": "Laptop",
+    "customerId": 1
+}
+customer collection
+{
+    "_id": 1,
+    "name": "John Doe",
+    "email": "john@example.com"
+}
+// js 
+db.orders.aggregate([
+    {
+        $lookup:
+            {
+                from: "customers",
+                localField: "customerId",
+                foreignField: "_id",
+                as: "customerDetails"
+            }
+    }
+])
+it will give an perform left outer join and give us an array
+Result = {
+    "_id": 1,
+    "product": "Laptop",
+    "customerId": 1,
+    "customerDetails": [
+        {
+            "_id": 1,
+            "name": "John Doe",
+            "email": "john@example.com"
+        }
+    ]
+}
 
