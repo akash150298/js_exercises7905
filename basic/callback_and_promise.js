@@ -73,3 +73,35 @@ async function getData() {
         console.error('Error:', error);
     }
 }
+
+// Wrap callback inside promise
+function callback_chain(arg1, arg2, callback) {
+    setTimeout(()=>{
+        sum = arg1 + arg2
+        if (sum % 2 !== 0) {
+            callback(null, sum)
+        }
+        else{
+            callback(new Error("The function is not odd", null))
+        }
+    }, 1000)
+}
+function promisified(arg1, arg2) {
+    return new Promise((resolve, reject) => {
+        callback_chain(arg1, arg2, (error, result) => {
+            if (error) {
+                reject("error")
+            }
+            else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+promisified(2,3).then((result) => {
+    console.log(result)
+})
+.catch((error)=>{
+    console.log(error.message)
+})
