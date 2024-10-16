@@ -4,6 +4,33 @@ function fetchData(callback) {
     }, 2000);
 }
 
+function abc(callback) {
+    setTimeout(() => {
+        console.log("Timeout");
+
+        // Call the callback function after the first timeout
+        callback();
+    }, 2000);
+}
+
+function bds(callback) {
+    setTimeout(() => {
+        console.log("TimmeeOOOuuut");
+
+        // Call the callback function after the second timeout
+        callback();
+    }, 1000);
+}
+
+abc(() => {
+    bds(() => {
+        console.log("All done!");
+    });
+});
+
+console.log('Starting...');
+
+
 fetchData((message) => {
     console.log(message); // Outputs: Data fetched!
 });
