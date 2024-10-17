@@ -47,4 +47,19 @@ async function downloadContents(urls) {
   return Promise.all(promises);
 }
 
+// a more concise and better version
+function fetchDataFromAPI(url) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    });
+}
+
+function fetchMultipleAPIs(apiUrls) {
+  const promises = apiUrls.map(url => fetchDataFromAPI(url));
+  return Promise.all(promises);
+}
 
