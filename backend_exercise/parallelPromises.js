@@ -30,3 +30,21 @@ downloadContents(urls)
     console.log('Error:', error.message);
   });
 
+async function downloadContents(urls) {
+  const promises = urls.map(async (url) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.text();
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  });
+
+  return Promise.all(promises);
+}
+
+
