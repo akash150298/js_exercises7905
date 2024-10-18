@@ -1,20 +1,33 @@
 const async = require('async');
+const axios = require('axios');
 
-// Create a queue with a concurrency of 2
-const q = async.queue((task, callback) => {
-    console.log('Processing task:', task.name);
-    setTimeout(() => {
-        console.log('Completed task:', task.name);
-        callback();
-    }, 1000);
-}, 2);
+// Create a queue with a concurrency of 3
+const q = async.queue(async (task, callback) => {
+    try {
+        const response = await axios.get(task.url);
+        console.log(`Fetched data from ${task.url}`);
+        // Process the response data here
+    } catch (error) {
+        console.error(`Error fetching data from ${task.url}:`, error);
+    }
+    callback();
+}, 3);
+
+// List of URLs to scrape
+const urls = [
+    'https://example.com/page1',
+    'https://example.com/page2',
+    'https://example.com/page3',
+    'https://example.com/page4',
+    'https://example.com/page5'
+];
 
 // Add tasks to the queue
-q.push({name: 'task1'});
-q.push({name: 'task2'});
-q.push({name: 'task3'});
+urls.forEach(url => {
+    q.push({ url });
+});
 
 // Assign a drain event handler
 q.drain(() => {
-    console.log('All tasks have been processed');
+    console.log('All URLs have been processed');
 });
